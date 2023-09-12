@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$roboto: "Roboto", sans-serif;
+// COLORS
+$white: #ffffff;
+$grayish: #f4f4f4;
+$gray:#989898;
+$cal-gray:#CACACA;
+$black: #292929;
+$blue: #006FCA;
+$bluish:#C1E4FF;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $roboto;
+  font-size: 10px;
+  color: $black;
+}
+
+// HEADER 
+.header {
+  background-color: $grayish;
+  box-shadow: 0 0 6px $gray;
+  &__container {
+    width: 902px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 55px 0 20px 0 ;
+    box-sizing: border-box;
+  }
+  &__container-buttons--button {
+    width: 80px;
+    box-sizing: border-box;
+    padding: 4px 0px;
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px $gray;
+    font-family: $roboto;
+    font-size: 12px;
+    font-weight: 500;
+    text-shadow: 0px 1px 3px $black;
+    cursor: pointer;
+    &:nth-child(1) {
+        margin-right: 14px;
+    }
+    &:hover {
+        background-color: #2b91e4;
+    }
+  }
+  &__container-search {
+    display: flex;
+    align-items: center;
+  }
+  &__container-search--input {
+    width: 200px;
+    height: 24px;
+    padding-left: 3px;
+    box-sizing: border-box;
+    border: 1px solid $cal-gray;
+    border-radius: 3px;
+    box-shadow: 0px -1px $cal-gray;
+    background-color: $white;
+    font-size: 12px;
+  }
+}
+// NAVIGATION
+.nav{
+  width: 902px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 12px 0;    
+
+  &__months{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-width: 200px;
+  }
+  &__button{
+      width: 17px;
+      height: 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $gray;
+      box-shadow: 0 0 2px $gray;
+      border-radius: 4px;
+      background-color: $white;
+      color: $black;
+
+      padding: 0 0 2px 0;
+
+      cursor: pointer;
+
+      &:hover{
+          transition: 0.2s ease;
+          background-color: $grayish;
+      }
+  }
+  &__month{
+      padding: 0 15px;
+      font-family: $roboto;
+      font-size: 16px;
+  }
+  &__day{
+      height: 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $gray;
+      box-shadow: 0 0 2px $gray;
+      border-radius: 4px;
+      background-color: $white;
+
+      font-family: $roboto;
+      font-size: 10px;
+      color: $black;
+
+      padding: 0 8px;
+      margin-left: 8px;
+
+      cursor: pointer;
+
+      &:hover{
+          transition: 0.2s ease;
+          background-color: $grayish;
+      }
+  }
+}
+.today {
+  background-color: $grayish;
+}
+
+// CALENDAR 
+.calendar {
+  width: 902px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-bottom: 64px;
+  &__item {
+    height: 118px;
+    padding: 10px;
+    color: $gray;
+    border-right: 1px solid $cal-gray;
+    border-top: 1px solid $cal-gray;
+    cursor: pointer;
+    &:nth-child(7n+1) {
+        border-left: 1px solid $cal-gray;
+    }
+    &:nth-child(1n+36) {
+        border-bottom: 1px solid $cal-gray;
+    }
+    &:hover{
+        transition: 0.2s ease;
+        background-color: $grayish;
+        color: $black;
+    }
+  }
+}
